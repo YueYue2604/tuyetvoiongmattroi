@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chúc Mừng Sinh Nhật</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+   body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  background-image: url('https://i.pinimg.com/736x/da/85/2e/da852ece4114088a764ca55252e0b30d.jpg');
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #FBEAFF;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      margin-top: 60px;
+      color: #e0b0ff;
+      text-shadow: 1px 1px 4px #000;
+    }
+    .falling-flower {
+      position: absolute;
+      top: -30px;
+      width: 30px;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(200vh) rotate(360deg); opacity: 0; }
+    }
+
+    .slideshow-container {
+      max-width: 400px;
+      margin: 40px auto;
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    .dresscode {
+      margin: 60px auto;
+      background: rgba(255,255,255,0.1);
+      border-radius: 30px;
+      width: 300px;
+      padding: 20px;
+      color: #fff;
+      box-shadow: 0 0 10px #caa0ff;
+    }
+
+    .dresscode h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 50px;
+      color: #fddfff;
+      margin-bottom: 10px;
+    }
+
+    .circles {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+
+    .white { background-color: white; }
+    .black { background-color: black; }
+
+    .calendar {
+      background-color: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      width: fit-content;
+      margin: 40px auto;
+      box-shadow: 0 0 20px #ccc;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    caption {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #ffedff;
+    }
+
+    th, td {
+      width: 60px;
+      height: 60px;
+      text-align: center;
+    }
+
+    th {
+      color: #ffeebb;
+    }
+
+    .highlight {
+      border-radius: 100%;
+      background-color: #e6d4ff;
+      color: #f6f4ef;
+      font-weight: bold;
+    }
+
+    .form-chuc-wrapper {
+      max-width: 500px;
+      margin: 70px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .form-chuc-wrapper h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.2em;
+      color: #dda1c5;
+      margin-bottom: 20px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 30px;
+      border: 1px solid #e4cbe3;
+      border-radius: 14px;
+      font-size: 16px;
+      background-color: #fff8fc;
+    }
+
+    form button {
+      background-color: #f5b9dd;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-family: 'Quicksand', sans-serif;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #dcaac8;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.4);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 18px;
+      color: #d58bb7;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .popup-content button {
+      margin-top: 15px;
+      background: hsl(324, 100%, 89%);
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .popup-content button:hover {
+      background: #e6aed0;
+    }
+
+    .map-button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: #e0b0ff;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<div>
+  <br>
+
+  <iframe src="https://www.nhaccuatui.com/mh/background/fAE0HE06iCCj" width="1" height="1" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+
+  <script>
+  </script>
+  <h1>Chúc Mừng Sinh Nhật Huỳnh Thu Nguyệt</h1>
+
+ 
+  <script>
+    function createFlower() {
+      const flower = document.createElement("img");
+      flower.src = "https://cdn-icons-png.flaticon.com/128/6939/6939915.png";
+      flower.classList.add("falling-flower");
+      flower.style.left = Math.random() * 100 + "%";
+      flower.style.animationDuration = (4 + Math.random() * 3) + "s";
+      flower.style.zIndex = 1;
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 8000);
+    }
+    setInterval(createFlower, 500);
+  </script>
+  <div class="slideshow-container">
+    <div class="slide"><img src="img/1000014620.jpeg" alt="Ảnh 1"></div>
+    <div class="slide"><img src="img/1000016014.jpeg" alt="Ảnh 2"></div>
+    <div class="slide"><img src="img/1000014620.jpeg" alt="Ảnh 3"></div>
+    <div class="slide"><img src="img/unnamed.jpg" alt="Ảnh 4"></div>
+  </div>  
+</div>
+ </script>
+  <div class="dresscode">
+    <h2>Dresscode</h2>
+    <div class="circles">
+      <div class="circle white"></div>
+      <div class="circle black"></div>
+    </div>
+  </div>
+
+ 
+  <div class="calendar">
+    <caption>Tháng 4 / 2025</caption>
+    <table>
+      <tr><th>CN</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th><th>T7</th></tr>
+      <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+      <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+      <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+      <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td class="highlight">26</td></tr>
+      <tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <title>Đếm ngược dễ thương</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .countdown {
+      font-size: 2.5em;
+      font-style: italic;
+      color: #fcdbec;
+    }
+    .label {
+      font-size: 1.2em;
+      margin-top: 20px;
+      color: #f7f1f4;
+    }
+  </style>
+<body>
+  <div class="countdown" id="countdown">⏳ Đang tải...</div>
+  <div class="label">💖 Cùng chờ đến 15:00 ngày 26/04/2025 nhé! </div>
+
+  <script>
+    const countdown = document.getElementById('countdown');
+    const targetDate = new Date('2025-04-26T15:00:00+07:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdown.innerHTML = '🎉 Đã đến giờ rồi! 🎉';
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      countdown.innerHTML = `⏰ ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+    }
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+  </script>
+
+  <section class="form-chuc-wrapper">
+    <h2>💌 Gửi Lời Chúc</h2>
+    <form id="wish-form">
+      <input type="text" name="user_name" placeholder="Họ và Tên" required>
+      <textarea name="message" rows="4" placeholder="Nhập lời chúc..." required></textarea>
+      <button type="submit">💖 Gửi Lời Chúc</button> 
+    </form>
+  </section>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h3>💌 Cảm ơn bạn đã gửi lời chúc!</h3>
+      <button onclick="closePopup()">Đóng</button>
+    </div>
+  </div>
+
+ 
+<div style="text-align: center; margin-top: 30px;">
+  <button class="map-button" onclick="window.open('https://www.google.com/maps?q=Hung+Vuong+Plaza+Hồ+Chí+Minh', '_blank')">
+    📍 Xem Bản Đồ
+  </button>
+</div>
+
+  
+  <div class="video-container" style="text-align: center; margin-top: 50px;">
+    <h2 style="color: #d85fa1;">🎥 Xem Video Kỷ Niệm</h2>
+    <input type="password" id="videoPassword" placeholder="Nhập mật khẩu để xem video" style="padding: 10px; width: 300px; border-radius: 10px; border: 1px solid #ccc;">
+    <button onclick="checkPassword()" style="padding: 10px 20px; border: none; border-radius: 10px; background-color: #e0b0ff; color: #fff; cursor: pointer; margin-left: 10px;">Xác nhận</button>
+  </div>
+  <div id="videoFrame" style="display: none; margin-top: 20px;">
+    <video width="560" height="315" controls autoplay>
+      <source src="copy_1E51BF9C-9C87-49E2-9912-5B675A4AADE4.mp4" type="video/mp4">
+    </video>
+  </div>
+  
+
+  <p style="text-align: center; margin-top: 40px; color: #b86bba; font-weight: bold;">Thank You 💜</p>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("vcXUBAxEEFC7okQhX");
+    })();
+
+    document.getElementById("wish-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.sendForm('service_bkypzbd', 'template_z50wkgr', this)
+        .then(function(response) {
+          document.getElementById("wish-form").reset();
+          showPopup();
+        }, function(error) {
+          alert("Có lỗi xảy ra: " + error.text);
+        });
+    });
+
+    function showPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function checkPassword() {
+      const password = document.getElementById('videoPassword').value;
+      if (password === '26042007') {
+        document.getElementById('videoFrame').style.display = 'block';
+      } else {
+        alert('Mật khẩu không đúng!');
+      }
+    }
+
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach((slide, idx) => {
+        slide.style.display = (idx === slideIndex) ? "block" : "none";
+      });
+      slideIndex = (slideIndex + 1) % slides.length;
+      setTimeout(showSlides, 3000);
+    }
+    showSlides();
+  </script>
+</body>
+</html>
